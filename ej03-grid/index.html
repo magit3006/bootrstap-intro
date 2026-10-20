@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ejercicio 3 · Laboratorio de rejilla</title>
+
+  <!-- CSS de Bootstrap 5.3.8 (CDN) -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css">
+
+  <!-- Estilo SOLO para ver las columnas en este ejercicio (ya está hecho) -->
+  <style>
+    .demo .row>[class*="col"] {
+      padding: 1rem;
+      border: 1px solid #b9a6d9;
+      background: #f4f1f9;
+    }
+
+    .demo h2 {
+      margin-top: 2rem;
+      font-size: 1.1rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ============================================================
+       EJERCICIO 3 · Laboratorio de rejilla (Grid)
+       Usa el modo responsive de las DevTools (Ctrl + Shift + M)
+       ============================================================ -->
+
+  <div class="container demo py-4">
+    <h1 class="h3">Laboratorio de rejilla</h1>
+
+    <!-- PASO 1: tres columnas iguales (col) -->
+    <h2>1. Columnas iguales</h2>
+    <div class="row">
+      <div class="col">Columna 1 (.col)</div>
+      <div class="col">Columna 2 (.col)</div>
+      <div class="col">Columna 3 (.col)</div>
+    </div>
+
+    <!-- PASO 2: contenido principal 8 + lateral 4 -->
+    <h2>2. Sobre 12 columnas</h2>
+    <div class="row">
+      <div class="col-8">Principal (.col-8)</div>
+      <div class="col-4">Lateral (.col-4)</div>
+    </div>
+
+    <!-- PASO 3: 4 cajas → 1 por fila en móvil, 2 en tablet (md), 4 en escritorio (lg) -->
+    <h2>3. Responsive</h2>
+    <div class="row">
+      <div class="col-12 col-md-6 col-lg-3">Caja 1 (.col-12 .col-md-6 .col-lg-3)</div>
+      <div class="col-12 col-md-6 col-lg-3">Caja 2 (.col-12 .col-md-6 .col-lg-3)</div>
+      <div class="col-12 col-md-6 col-lg-3">Caja 3 (.col-12 .col-md-6 .col-lg-3)</div>
+      <div class="col-12 col-md-6 col-lg-3">Caja 4 (.col-12 .col-md-6 .col-lg-3)</div>
+    </div>
+
+    <!-- PASO 4: separación entre columnas con g-3 -->
+    <h2>4. Gutters</h2>
+    <div class="row g-3">
+      <div class="col-6">
+        <div>Columna A (.col-6 con g-3)</div>
+      </div>
+      <div class="col-6">
+        <div>Columna B (.col-6 con g-3)</div>
+      </div>
+      <div class="col-6">
+        <div>Columna C (.col-6 con g-3)</div>
+      </div>
+      <div class="col-6">
+        <div>Columna D (.col-6 con g-3)</div>
+      </div>
+    </div>
+
+    <!-- PASO 5: una columna centrada de dos formas: offset-md-3 y justify-content-center -->
+    <h2>5. Centrar</h2>
+    <p class="text-muted small mb-1">Opción A: con <code>offset-md-3</code> en una columna de 6</p>
+    <div class="row mb-3">
+      <div class="col-12 col-md-6 offset-md-3 text-center">Columna centrada con .offset-md-3</div>
+    </div>
+    <p class="text-muted small mb-1">Opción B: con <code>justify-content-center</code> en la fila</p>
+    <div class="row justify-content-center">
+      <div class="col-12 col-md-6 text-center">Columna centrada con .justify-content-center</div>
+    </div>
+
+    <!-- PASO 6: row-cols-2 row-cols-md-4 -->
+    <h2>6. row-cols</h2>
+    <div class="row row-cols-2 row-cols-md-4 g-2">
+      <div class="col">Elemento 1</div>
+      <div class="col">Elemento 2</div>
+      <div class="col">Elemento 3</div>
+      <div class="col">Elemento 4</div>
+    </div>
+
+    <!-- RETO: maqueta de periódico (cabecera 12 · artículo 8 + lateral 4 · 3 noticias) -->
+    <h2>Reto: Maqueta de periódico</h2>
+    <div class="row mb-2">
+      <div class="col-12 text-center py-3 fw-bold fs-4">📰 DIARIO DIGITAL DE DAW (col-12)</div>
+    </div>
+    <div class="row mb-2">
+      <div class="col-12 col-md-8">
+        <h3 class="h5 fw-bold">Gran avance en el desarrollo web moderno con Bootstrap 5</h3>
+        <p class="mb-0">El sistema de rejilla flexbox de 12 columnas permite estructurar layouts complejos,
+          completamente fluidos y adaptables a móviles, tablets y grandes pantallas.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h4 class="h6 fw-bold">Columna de opinión</h4>
+        <p class="small mb-0">La importancia del enfoque Mobile-First y la accesibilidad web en los ciclos formativos de
+          DAW.</p>
+      </div>
+    </div>
+    <div class="row g-2">
+      <div class="col-12 col-md-4">
+        <h5 class="h6 fw-bold">Noticia 1</h5>
+        <p class="small mb-0">Nuevas utilidades de espaciado y CSS variables nativas en Bootstrap.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h5 class="h6 fw-bold">Noticia 2</h5>
+        <p class="small mb-0">Integración de Bootstrap Icons con más de 2000 glifos vectoriales.</p>
+      </div>
+      <div class="col-12 col-md-4">
+        <h5 class="h6 fw-bold">Noticia 3</h5>
+        <p class="small mb-0">El futuro del modo oscuro con el atributo data-bs-theme automático.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botón para volver al índice del proyecto (puedes dejarlo) -->
+  <a href="../index.html" class="btn btn-sm btn-outline-secondary position-fixed bottom-0 end-0 m-3 z-3">← Índice</a>
+
+  <!-- JS de Bootstrap (incluye Popper). Siempre al final del body -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
